@@ -34,7 +34,7 @@ const a = function () {
 //* es posible almacenar funciones en objetos
 const rocket = {
   mainName: "falcon 9",
-  launchMessage: function launchMessage() {
+  launchMessage: function () {
     console.log("Al infinito y más allá!");
   }, //! <- Esto es un metodo de un objeto
 };
