@@ -2,8 +2,8 @@
 
 //! Las funciones constructoras empiezan por masyusculas
 function Rocket(name, message) {
-  this.name = name;
-  this.launchMessage = () => message; //? <- Aqui tambien puedo llamar funciones fuera del codigo
+    this.name = name;
+    this.launchMessage = () => message; //? <- Aqui tambien puedo llamar funciones fuera del codigo
 }
 const personalizedMessage = () => "Goodbye everybody !";
 const falcon9Rocket = new Rocket("Falcon9", personalizedMessage());
@@ -16,16 +16,16 @@ console.log(falconHeavy.launchMessage());
 //// Creando funciones constructoras con arrow functions
 //* Creando una funcion con retorno implicito de objeto
 const sailorShip = (name, message) => ({
-  //? <- Aqui se ponen parentesis para indicar que no es un bloque de codigo, si no, un objeto
-  name: name,
-  launchMessage: message,
+    //? <- Aqui se ponen parentesis para indicar que no es un bloque de codigo, si no, un objeto
+    name: name,
+    launchMessage: message,
 });
 
 const personalizedMessageForArrowFun = () => "Ship ready to sail !";
 
 const laGaviotaYatch = sailorShip(
-  "laGaviotaYatch",
-  personalizedMessageForArrowFun
+    "laGaviotaYatch",
+    personalizedMessageForArrowFun
 );
 console.log(laGaviotaYatch.name);
 console.log(laGaviotaYatch.launchMessage());
