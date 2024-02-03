@@ -49,4 +49,5 @@ let total = 0;
 for (let i = 0; i < sumArray.length; i++) {
     total += sumArray[i];
 }
+
 console.log(total);
