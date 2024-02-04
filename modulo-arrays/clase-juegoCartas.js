@@ -7,26 +7,32 @@
  *  the cards in the deck.
  *
  *  2. Deal Cards: Deal a specific number of cards to players
- *  from the top od the deck.
+ *  from the top of the deck.
  *
  * Do it with the splice() method
  */
 const deck = ["♠︎", "♣︎", "♥︎", "♦︎"];
 console.log(`Initial deck: ${deck}`);
 
-function randomNumber() {
+function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
 function shuffleCards(deck) {
-    for (let i = 0; i < deck - 1; i++) {
-        const cardA = deck[i];
-        const cardB = deck[i + 1];
-        deck.splice(i, 1, cardB);
-        deck.splice(i + 1, 1, cardA);
+    for (let i = 0; i < randomNumber(2, 6); i++) {
+        const cartaCambiar = randomNumber(0, 4);
+        console.log(`Random number: ${cartaCambiar}`);
+        if (cartaCambiar == deck.length - 1) {
+            const cardA = deck[cartaCambiar];
+            const cardB = deck[cartaCambiar - 1];
+            deck.splice(cartaCambiar, 1, cardB);
+            deck.splice(cartaCambiar - 1, 1, cardA);
+        } else {
+            const cardA = deck[cartaCambiar];
+            const cardB = deck[cartaCambiar + 1];
+            deck.splice(cartaCambiar, 1, cardB);
+            deck.splice(cartaCambiar + 1, 1, cardA);
+        }
         console.log(`Deck now is: ${deck}`);
     }
 }
-
-shuffleCards(deck);
-// console.log(`Final deck: ${deck}`);
